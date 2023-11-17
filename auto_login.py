@@ -1,17 +1,33 @@
+#환경 설정 세팅
 # selenium의 webdriver를 사용하기 위한 import
 from selenium import webdriver
-
-# selenium으로 키를 조작하기 위한 import
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
-# 페이지 로딩을 기다리는데에 사용할 time 모듈 import
 import time
 
 # 크롬드라이버 실행
 driver = webdriver.Chrome() 
+driver.get('https://www.naver.com/')
 
-#크롬 드라이버에 url 주소 넣고 실행
-driver.get('https://www.google.co.kr/')
-
-# 페이지가 완전히 로딩되도록 3초동안 기다림
 time.sleep(3)
+
+# 네이버 로그인 페이지 이동 버튼 클릭
+move_login_page_button = driver.find_element(By .CSS_SELECTOR, ".MyView-module__link_login___HpHMW")
+move_login_page_button.click()
+
+time.sleep(2)
+
+# id 및 pw 입력
+id = driver.find_element(By .CSS_SELECTOR, "#id")
+id.send_keys('test')
+
+pw = driver.find_element(By .CSS_SELECTOR, "#pw")
+pw.send_keys('tset')
+
+time.sleep(2)
+
+# 네이버 로그인 페이지 이동 버튼 클릭
+login_button = driver.find_element(By .CSS_SELECTOR, ".btn_login")
+login_button.click()
+
+time.sleep(2)
