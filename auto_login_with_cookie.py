@@ -2,14 +2,20 @@
 # selenium의 webdriver를 사용하기 위한 import
 import time
 import pyperclip
-from selenium.webdriver.chrome.options import Options
+import pyautogui
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 try :
+    cookie_file_path = "C:\cookie\cookie.txt"
+    
+    with open(cookie_file_path, "r", encoding="utf-8") as file :
+        cookie_value = file.read()
+    
+    uid = pyautogui.prompt('아이디를 입력하세요.')
+    upid = pyautogui.password('패스워드를 입력하세요')
+
     driver = webdriver.Chrome()
     driver.get("https://www.naver.com/")
 
@@ -19,16 +25,16 @@ try :
 
     time.sleep(2)
 
-    driver.add_cookie({"name": "NID_SAUTO", "value": "538595040"})
+    driver.add_cookie({"name": "NID_SAUTO", "value": cookie_value})
 
     # id 및 pw 입력
-    user_id = '아이디를 입력하세요'
+    user_id = uid
     id = driver.find_element(By .CSS_SELECTOR, "#id")
     pyperclip.copy(user_id)
     id.send_keys(Keys.CONTROL, 'v')
     time.sleep(1)
 
-    user_pw = '비밀번호를 입력하세요'
+    user_pw = upid
     pw = driver.find_element(By .CSS_SELECTOR, "#pw")
     pyperclip.copy(user_pw)
     pw.send_keys(Keys.CONTROL, 'v')
@@ -39,8 +45,6 @@ try :
     login_button.click()
 
     time.sleep(3)
-    
-    while True :
-        continue
+
 finally :
     pass
