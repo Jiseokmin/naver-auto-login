@@ -1,7 +1,6 @@
-# 네이버 자동로그인
-  naver auto login program
+# 네이버 자동로그인 naver auto login program
 
-- 개발 언어 - python (selenium, pyautogui)
+📌 개발 언어 - python (selenium, pyautogui)
 - [ver#1] 9222 포트로 chrome 실행시켜 준 다음 실행
   1. cmd 실행 -> chrome.exe 파일 있는 경로로 이동 (64비트 기준)
      C:\Program Files\Google\Chrome\Application
