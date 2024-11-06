@@ -1,4 +1,4 @@
-# 네이버 자동로그인 naver auto login programd
+# 네이버 자동로그인 naver auto login program
 
 📌 **개발 언어 - python (selenium, pyautogui)**
 ## [ver1] 9222 포트로 chrome 실행시켜 준 다음 실행
